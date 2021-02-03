@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: app
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: env-test
+        image: pchavanne/env-app
+        env:
+        - name: FOO
+          value: BAZ
